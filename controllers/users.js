@@ -14,4 +14,10 @@ router.get("/:_id", async (ctx) => {
   }
 });
 
+// Маршрут для получения всех пользователей
+router.get("/", async (ctx) => {
+  const users = await User.find();
+  ctx.body = users;
+});
+
 module.exports = router.routes();
